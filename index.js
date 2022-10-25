@@ -25,7 +25,7 @@ const connectToWA = () => {
 		const { connection, lastDisconnect } = update
 		if (connection === 'close') {
 			if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
-				connectToWA()
+				connectToWA('/.session.json')
 			}
 		} else if (connection === 'open') {
 			console.log('Bot conectado')
